@@ -1,0 +1,387 @@
+/* React-specific styles and enhancements */
+
+.App {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  position: fixed;
+  top: 100px;
+  right: 40px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1001;
+  box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1) rotate(20deg);
+  box-shadow: 0 8px 20px rgba(243, 156, 18, 0.6);
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+  background: #1a1a1a;
+  color: #f0f0f0;
+}
+
+.dark-mode .header {
+  background: linear-gradient(135deg, #0a1628 0%, #0f2557 100%);
+}
+
+.dark-mode .banner-section {
+  background: #2d2d2d !important;
+}
+
+.dark-mode .banner-content h2,
+.dark-mode .banner-content .tagline,
+.dark-mode .find-section h2,
+.dark-mode .action-card h3,
+.dark-mode .offers-content h2,
+.dark-mode .accordion-item h3 {
+  color: #f0f0f0;
+}
+
+.dark-mode .newsletter-section {
+  background: linear-gradient(135deg, #1a4d4d 0%, #2d6a6a 100%);
+}
+
+.dark-mode .footer {
+  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+}
+
+.dark-mode .footer-column h4,
+.dark-mode .footer-column ul li a {
+  color: #c0c0c0;
+}
+
+/* Visit Counter */
+.visit-counter {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 15px;
+  background: rgba(243, 156, 18, 0.2);
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #f39c12;
+  transition: all 0.3s;
+}
+
+.visit-counter:hover {
+  background: rgba(243, 156, 18, 0.3);
+  transform: scale(1.05);
+}
+
+/* Active Navigation */
+.nav-menu a.active,
+.mobile-nav a.active {
+  color: #f39c12 !important;
+  position: relative;
+}
+
+.nav-menu a.active::after {
+  width: 100% !important;
+}
+
+/* Hero Slide Indicators */
+.slide-indicators {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 2;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 0;
+}
+
+.indicator.active {
+  background: #f39c12;
+  border-color: #f39c12;
+  transform: scale(1.3);
+}
+
+.indicator:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Section Controls */
+.section-controls {
+  text-align: center;
+  padding: 40px 20px;
+  background: #fff;
+}
+
+.dark-mode .section-controls {
+  background: #2d2d2d;
+}
+
+.filter-btn {
+  padding: 12px 30px;
+  margin: 0 10px;
+  border: 2px solid #16a085;
+  background: transparent;
+  color: #16a085;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filter-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(22, 160, 133, 0.3);
+}
+
+.filter-btn.active {
+  background: #16a085;
+  color: #fff;
+}
+
+/* Newsletter Form */
+.newsletter-form {
+  max-width: 600px;
+  margin: 30px auto 0;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.dark-mode .newsletter-form {
+  background: rgba(45, 45, 45, 0.9);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 15px 20px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #16a085;
+  box-shadow: 0 0 0 3px rgba(22, 160, 133, 0.1);
+}
+
+.form-group input.error {
+  border-color: #e74c3c;
+}
+
+.error-message {
+  display: block;
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #16a085 0%, #1abc9c 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(22, 160, 133, 0.4);
+}
+
+.signup-button.secondary {
+  background: #95a5a6;
+}
+
+.signup-button.secondary:hover {
+  background: #7f8c8d;
+}
+
+/* Success Message */
+.success-message {
+  max-width: 600px;
+  margin: 30px auto 0;
+  padding: 30px;
+  background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+  border-radius: 15px;
+  text-align: center;
+  color: #fff;
+  animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.success-icon {
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  color: #2ecc71;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0 auto 20px;
+}
+
+.success-message p {
+  font-size: 18px;
+  margin: 0;
+}
+
+/* Accordion Content */
+.accordion-content {
+  padding: 20px 0 10px;
+  animation: fadeIn 0.3s ease;
+}
+
+.accordion-content ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.accordion-content li {
+  padding: 8px 0;
+}
+
+.accordion-content a {
+  color: #666;
+  text-decoration: none;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.accordion-content a:hover {
+  color: #16a085;
+  transform: translateX(5px);
+}
+
+.dark-mode .accordion-content a {
+  color: #c0c0c0;
+}
+
+.dark-mode .accordion-content a:hover {
+  color: #1abc9c;
+}
+
+/* Mobile Menu Overlay */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1999;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Reversed Banner Layout */
+.banner-container.reversed {
+  direction: rtl;
+}
+
+.banner-container.reversed > * {
+  direction: ltr;
+}
+
+/* Desktop Navigation */
+.desktop-nav {
+  display: flex;
+  gap: 35px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .theme-toggle {
+    top: 80px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 768px) {
+  .visit-counter {
+    display: none;
+  }
+
+  .slide-indicators {
+    bottom: 60px;
+  }
+
+  .section-controls {
+    padding: 20px 10px;
+  }
+
+  .filter-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    margin: 5px;
+  }
+
+  .newsletter-form {
+    padding: 20px;
+  }
+
+  .theme-toggle {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
